@@ -1,18 +1,16 @@
 package com.abc;
 
-import java.util.Calendar;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.Year;
 
 public class DateProvider {
-    private static DateProvider instance = null;
 
-    public static DateProvider getInstance() {
-        if (instance == null)
-            instance = new DateProvider();
-        return instance;
+    public static LocalDate now() {
+        return LocalDate.now();
     }
-
-    public Date now() {
-        return Calendar.getInstance().getTime();
+    
+    public static int getNumberOfDaysYear(){
+    	return Year.now().isLeap()?366:365;
     }
+    
 }
